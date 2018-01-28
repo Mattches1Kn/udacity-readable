@@ -31,6 +31,7 @@ class PostDetail extends Component {
             return false;
         }
         this.props.addComment(this.props.match.params.id, this.state.commentAuthor, this.state.commentBody);
+        this.setState({commentAuthor : '', commentBody : ''});
     };
 
     componentDidMount() {
