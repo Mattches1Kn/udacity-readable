@@ -58,9 +58,16 @@ class Posts extends Component {
             <div style={{'width' : '80%'}}>
                 <h2>{heading}</h2>
                 <PostList onSortBy={this.sortBy} sortBy={this.state.sortBy} items={this.props.posts}/>
-                <LinkContainer to={createLink}>
-                    <button style={{'marginLeft':'5px'}} type="button" className="btn btn-primary btn-sm glyphicon glyphicon-plus"> Create Post </button>
-                </LinkContainer>
+                <div style={{
+                    'position' : 'fixed',
+                    'right' : '25px',
+                    'bottom' : '50px'
+                }}>
+                    <LinkContainer to={createLink}>
+                        <button style={{'marginLeft':'5px'}} type="button" className="btn btn-primary btn-lg"> Add your Post </button>
+
+                    </LinkContainer>
+                </div>
             </div>
         );
     }
