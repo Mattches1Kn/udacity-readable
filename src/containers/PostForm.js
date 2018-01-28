@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {getPost} from "../util/Api";
 import {updatePost, newPost} from "../actions/posts";
-import {Button, Col, ControlLabel, Form, FormControl, FormGroup} from "react-bootstrap";
+import {Button, Col, ControlLabel, Form, FormControl, FormGroup, Panel} from "react-bootstrap";
 import history from '../history';
 import PropTypes from 'prop-types';
 
@@ -115,83 +115,84 @@ class PostForm extends Component {
             );
         }
         return (
-            <div style={{'width' : '80%'}}>
-                <h2>{heading}</h2>
-                <Form horizontal onSubmit={this.handleSubmit}>
-                    <FormGroup bsSize="large">
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Category
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl
-                                disabled={this.state.id !== undefined}
-                                defaultValue={this.state.selectedCategory}
-                                name="category"
-                                onChange={this.handleChange}
-                                componentClass="select"
-                            >
-                                {categoryList && categoryList.map((category, index) => (
-                                    <option key={index} value={category.name}> {category.name} </option>
-                                ))}
-                            </FormControl>
-                        </Col>
-                    </FormGroup>
-                    <FormGroup bsSize="large" validationState={this.getValidationStateAuthor()}>
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Author
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl
-                                disabled={this.state.id !== undefined}
-                                id="postAuthor"
-                                name="author"
-                                type="text"
-                                value={this.state.author}
-                                placeholder="Enter your name"
-                                onChange={this.handleChange}
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup bsSize="large" validationState={this.getValidationStateTitle()}>
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Title
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl
-                                id="postTitle"
-                                name="title"
-                                type="text"
-                                value={this.state.title}
-                                placeholder="Enter the title"
-                                onChange={this.handleChange}
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup bsSize="large" validationState={this.getValidationStateBody()}>
-                        <Col componentClass={ControlLabel} sm={2}>
-                            Message
-                        </Col>
-                        <Col sm={10}>
-                            <FormControl
-                                id="postBody"
-                                name="body"
-                                type="text"
-                                componentClass="textarea"
-                                value={this.state.body}
-                                placeholder="Enter your message"
-                                onChange={this.handleChange}
-                            />
-                        </Col>
-                    </FormGroup>
-                    <FormGroup bsSize="large">
-                        <Col smOffset={2} sm={10}>
-                            <div style={{'textAlign' : 'right'}}>
-                                <Button style={{'marginRight' : '10px'}} onClick={this.handleCancel} type="button">Cancel</Button>
-                                <Button type="submit">Save</Button>
-                            </div>
-                        </Col>
-                    </FormGroup>
-                </Form>
+            <div style={{'width' : '80%', 'marginTop' : '30px'}}>
+                <Panel header={(<h2>{heading}</h2>)}>
+                    <Form horizontal onSubmit={this.handleSubmit}>
+                        <FormGroup bsSize="large">
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Category
+                            </Col>
+                            <Col sm={10}>
+                                <FormControl
+                                    disabled={this.state.id !== undefined}
+                                    defaultValue={this.state.selectedCategory}
+                                    name="category"
+                                    onChange={this.handleChange}
+                                    componentClass="select"
+                                >
+                                    {categoryList && categoryList.map((category, index) => (
+                                        <option key={index} value={category.name}> {category.name} </option>
+                                    ))}
+                                </FormControl>
+                            </Col>
+                        </FormGroup>
+                        <FormGroup bsSize="large" validationState={this.getValidationStateAuthor()}>
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Author
+                            </Col>
+                            <Col sm={10}>
+                                <FormControl
+                                    disabled={this.state.id !== undefined}
+                                    id="postAuthor"
+                                    name="author"
+                                    type="text"
+                                    value={this.state.author}
+                                    placeholder="Enter your name"
+                                    onChange={this.handleChange}
+                                />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup bsSize="large" validationState={this.getValidationStateTitle()}>
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Title
+                            </Col>
+                            <Col sm={10}>
+                                <FormControl
+                                    id="postTitle"
+                                    name="title"
+                                    type="text"
+                                    value={this.state.title}
+                                    placeholder="Enter the title"
+                                    onChange={this.handleChange}
+                                />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup bsSize="large" validationState={this.getValidationStateBody()}>
+                            <Col componentClass={ControlLabel} sm={2}>
+                                Message
+                            </Col>
+                            <Col sm={10}>
+                                <FormControl
+                                    id="postBody"
+                                    name="body"
+                                    type="text"
+                                    componentClass="textarea"
+                                    value={this.state.body}
+                                    placeholder="Enter your message"
+                                    onChange={this.handleChange}
+                                />
+                            </Col>
+                        </FormGroup>
+                        <FormGroup bsSize="large">
+                            <Col smOffset={2} sm={10}>
+                                <div style={{'textAlign' : 'right'}}>
+                                    <Button style={{'marginRight' : '10px'}} onClick={this.handleCancel} type="button">Cancel</Button>
+                                    <Button type="submit">Save</Button>
+                                </div>
+                            </Col>
+                        </FormGroup>
+                    </Form>
+                </Panel>
             </div>
         );
     }
