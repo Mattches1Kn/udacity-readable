@@ -8,6 +8,7 @@ import PostPreview from "./PostPreview";
 import history from '../history';
 import {addComment, deleteComment, getCommentsOfPost, voteComment} from "../actions/comments";
 import PropTypes from 'prop-types';
+import NoRouteMatch from "../components/NoRouteMatch";
 
 class PostDetail extends Component {
 
@@ -72,7 +73,7 @@ class PostDetail extends Component {
     render() {
         if (this.props.loadingError) {
             return (
-                <div>Error</div>//TODO
+                <div style={{'width' : '80%'}}><NoRouteMatch/></div>
             );
         }
         const commentCount = this.props.comments ? this.props.comments.length : 0;

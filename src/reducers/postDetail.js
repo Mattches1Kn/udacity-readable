@@ -30,8 +30,8 @@ export function postDetail(state = {post : {'author':'', 'title' : '', 'body' : 
             return {
                 ...state,
                 post: {},
-                isLoading: action.isLoading,
-                loadingError: action.loadingError
+                isLoading: false,
+                loadingError: true
             };
         case DELETE_COMMENT:
             index = comments.findIndex( (item) => (item.id === action.comment.id));

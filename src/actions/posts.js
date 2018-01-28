@@ -35,6 +35,13 @@ export function loadingSuccess(items) {
 }
 
 export function loadingSuccessPost(post) {
+    if (Object.keys(post).length === 0 && post.constructor === Object) {
+        return {
+            type: POST_LOADING_ERROR,
+            loadingError: true,
+            isLoading: false
+        };
+    }
     return {
         type: POST_LOADING_SUCCESS,
         post: post,
@@ -104,7 +111,7 @@ export function getPost(id) {
             })
             .then(res => res.json())
             .then((post) => dispatch(loadingSuccessPost(post)))
-            .catch(() => dispatch(loadingError(POST_LOADING_ERROR, true)));
+            .catch(() => dispatch(loadingSuccessPost({})));
     };
 }
 

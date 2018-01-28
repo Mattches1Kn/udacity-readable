@@ -7,7 +7,7 @@ function NoRouteMatch()  {
         <div>
             <div>
                 <h1>404 : Ups, this page doesn't exist!</h1>
-                <Link to="/" >Back</Link>
+                <Link to="/" ><button type="button" className="btn btn-primary btn-lg"> Go to start page </button></Link>
             </div>
         </div>
     );

@@ -20,6 +20,7 @@ class PostPreview extends Component {
 
     onDelete = () => {
         this.props.deletePost(this.props.data.id);
+        history.push('/' + this.props.data.category + '/');
     };
 
     onEdit = () => {
@@ -56,7 +57,7 @@ class PostPreview extends Component {
                             type="button"
                             className="btn btn-primary btn-sm glyphicon glyphicon-pencil">
                         </button>
-                        {this.props.isDetailView === false  && (<Confirm
+                        <Confirm
                             confirmBSStyle="primary"
                             style={{'marginLeft':'5px'}}
                             onConfirm={this.onDelete}
@@ -64,7 +65,7 @@ class PostPreview extends Component {
                             confirmText="Confirm Delete"
                             title="Deleting Post">
                             <button  type="button" className="btn btn-primary btn-sm glyphicon glyphicon-trash"> </button>
-                        </Confirm>)}
+                        </Confirm>
 
 
                     </div>
