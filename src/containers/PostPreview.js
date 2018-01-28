@@ -35,7 +35,7 @@ class PostPreview extends Component {
         const date = new Date(timestamp);
         return (
             <div className="PostPreview">
-                <Panel header={(<h2>{title}<span>{category}</span></h2> )}>
+                <Panel header={(<div ><div style={{'float' : 'left'}}><span>{title}</span></div> <div style={{'float' : 'right'}}><Badge>{category}</Badge></div><div style={{'clear' : 'both'}}> </div></div> )}>
                 <p className="PostPreview-body">{body}</p>
                 <div>
                     <div className="PostPreview-info">
