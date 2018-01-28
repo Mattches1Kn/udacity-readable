@@ -1,9 +1,10 @@
 import {UPDATE_COMMENT} from "../actions/comments";
 import {UPDATE_POST} from "../actions/posts";
 
-initialState = {
+const initialState = {
     success: false,
-}
+};
+
 export function commentForm (state = initialState, action) {
     switch (action.type) {
         case UPDATE_COMMENT:
