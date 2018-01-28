@@ -12,12 +12,6 @@ class CommentForm extends Component {
         this.setState({ [evt.target.name]: evt.target.value });
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.success) {
-            history.push('/' + this.props.match.params.category + '/' + this.state.parentId);//form success -> redirect to post detail page
-        }
-    }
-
     componentDidMount() {
         if (this.props.match && this.props.match.params.id) {
             getComment(this.props.match.params.id)//TODO refactor
@@ -50,6 +44,7 @@ class CommentForm extends Component {
                 return false;
             }
             this.props.updateComment(this.state.id, this.state.body);
+            history.push('/' + this.props.match.params.category + '/' + this.state.parentId);
         }
     };
 

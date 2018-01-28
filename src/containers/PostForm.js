@@ -12,12 +12,6 @@ class PostForm extends Component {
         this.setState({ [evt.target.name]: evt.target.value });
     };
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.success) {
-            history.push('/' + this.state.category);//form success -> redirect to category page
-        }
-    }
-
     componentDidMount() {
         let selectedCategory = '';
         if (this.props.match && this.props.match.params.category) {
@@ -73,6 +67,7 @@ class PostForm extends Component {
         } else {
             this.props.createPost(this.state.author, this.state.title, this.state.body, this.state.category);
         }
+        history.push('/' + this.state.category);
     };
 
     handleCancel = () => {
