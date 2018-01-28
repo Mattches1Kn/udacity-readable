@@ -39,7 +39,7 @@ export function posts(state = initialState, action) {
                 items[index] = action.post;
             }
             return {
-                items: items
+                items: items.slice(0)//clone of items
             };
         case DELETE_POST_IN_LIST:
             index = items.findIndex( (item) => (item.id === action.post.id));
