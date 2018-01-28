@@ -23,6 +23,9 @@ class PostForm extends Component {
         if (this.props.match && this.props.match.params.category) {
             selectedCategory = this.props.match.params.category;
         }
+        if (!selectedCategory) {
+            selectedCategory = 'react';
+        }
         if (this.props.match && this.props.match.params.id) {
             getPost(this.props.match.params.id)//TODO refactor
                 .then((response) => {
