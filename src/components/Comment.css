@@ -1,6 +1,7 @@
 .Comment {
     text-align: center;
     border-top: solid thin lightgrey;
+    padding-top: 10px;
 }
 
 .Comment:first-child {
@@ -8,7 +9,8 @@
 }
 
 .Comment-content {
-    padding: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 .Comment-author {
@@ -17,14 +19,17 @@
     margin-right: 20px;
     width: 20%;
     text-align: right;
+    padding:5px
 }
 
 .Comment-body {
     font-size: 1em;
     float: left;
     margin-right: 20px;
-    width: 60%;
+    width: 70%;
     text-align: left;
+    border: 1px solid;
+    padding:5px
 }
 
 .Comment-date {
@@ -35,6 +40,7 @@
 .Comment-buttons {
     font-size: 1.5em;
     float: right;
+    padding-top: 10px;
 }
 
 .Comment-clear {

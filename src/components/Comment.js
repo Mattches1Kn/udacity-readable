@@ -9,9 +9,11 @@ function Comment(props)  {
     return (
             <div className="Comment">
                 <div className="Comment-content">
-                    <div className="Comment-author"><b>{comment.author}</b></div>
+                    <div className="Comment-author">
+                        <b>{comment.author}</b><br/>
+                       wrote on {date.toLocaleString()}
+                    </div>
                     <div className="Comment-body">{comment.body}</div>
-                    <div className="Comment-date">{date.toLocaleString()}</div>
                     <div className="Comment-buttons">
                         <Vote voteUp={(id) => props.onVote(id, 'upVote')} voteDown={(id) => props.onVote(id, 'downVote')} voteScore={comment.voteScore} id={comment.id}/>
                         <button style={{'marginLeft':'30px'}} onClick={() => props.onEdit(comment.id)} type="button" className="btn btn-primary btn-sm glyphicon glyphicon-pencil"> </button>
