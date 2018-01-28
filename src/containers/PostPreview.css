@@ -1,0 +1,20 @@
+.PostPreview {
+    text-align: left;
+    width:80%;
+}
+
+.PostPreview-body {
+    font-size: 1.0em;
+    border: 1px solid;
+    padding:10px
+}
+
+.PostPreview-buttons {
+    text-align: right;
+    float: right;
+}
+
+.PostPreview-info {
+    float: left;
+}
+

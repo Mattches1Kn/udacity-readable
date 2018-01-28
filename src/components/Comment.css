@@ -1,0 +1,42 @@
+.Comment {
+    text-align: center;
+    border-top: solid thin lightgrey;
+}
+
+.Comment:first-child {
+    border:none;
+}
+
+.Comment-content {
+    padding: 5px;
+}
+
+.Comment-author {
+    font-size: 1em;
+    float: left;
+    margin-right: 20px;
+    width: 20%;
+    text-align: right;
+}
+
+.Comment-body {
+    font-size: 1em;
+    float: left;
+    margin-right: 20px;
+    width: 60%;
+    text-align: left;
+}
+
+.Comment-date {
+    font-size: 1em;
+    float: left;
+    margin-right: 20px;
+}
+.Comment-buttons {
+    font-size: 1.5em;
+    float: right;
+}
+
+.Comment-clear {
+    clear: both;
+}
